@@ -220,7 +220,7 @@ def loader(uri="tYxJMr8jAgo"):
     page.quit()
 
 
-yt_lang=argparse.ArgumentParser(description="Youtube langchain Tool integrated with Langchain",epilog="""
+yt_lang=argparse.ArgumentParser(description="Youtube langchain Tool",epilog="""
 Examples:
                                 python youtube_lang.py -u uri -t -a GEMINI-API-KEY
                                 python youtube_lang.py -f title.txt -t -a GEMINI-API-KEY
