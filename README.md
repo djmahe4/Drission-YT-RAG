@@ -50,7 +50,7 @@ This tool relies on Google’s Gemini models. You need an API key:
 
 1. Go to [Google AI Studio](https://aistudio.google.com/apikey).  
 2. Create an API key.
-3. Provide it via CLI. Refer to (Examples)[### Examples]
+3. Provide it via CLI. Refer to [Examples](https://github.com/djmahe4/Drission-YT-RAG/blob/main/README.md#examples)
 
 ---
 
