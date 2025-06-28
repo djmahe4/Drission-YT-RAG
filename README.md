@@ -11,7 +11,7 @@ A Python command-line interface (CLI) that lets you extract subtitles from YouTu
 - **Transcript Generation**  
   Converts JSON subtitle data into a clean `.txt` transcript.
 - **Optional Translation**  
-  Translates the transcript to English (or another target language) via `googletrans-py`, with a progress bar.
+  Translates the transcript to English (or another target language) via `googletrans`, with a progress bar.
 - **Gemini-Powered RAG**  
   Uses LangChain + Google Generative AI (Gemini chat & embeddings) to build an interactive Q&A over your transcript.
 - **Context Window Optimization**  
