@@ -74,7 +74,7 @@ Options:
    ```bash
    python youtube_lang.py -u <VIDEO_ID> -t -a YOUR_GEMINI_API_KEY
    ```
-   - Opens a headless Chromium via DrissionPage
+   - Opens Chromium via DrissionPage
    - Workflow is not fully automated and reqires user interaction while enabling Closed Captions
    - Saves `VideoTitle.json` → `VideoTitle.txt` → `trans_VideoTitle.txt`  
    - Launches interactive Q&A  
