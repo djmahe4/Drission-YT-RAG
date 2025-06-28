@@ -136,7 +136,7 @@ Hit **ENTER** on an empty line to quit.
 ## Notes & Considerations
 
 - **Manual CC Click**: Sometimes you must click the “CC” button in the browser for DrissionPage to capture subtitles.  
-- **Translation Stability**: `googletrans-py` is more stable than the original but may still hiccup under heavy load.  
+- **Translation Stability**: `googletrans` is stable but may still hiccup under heavy load.  
 - **Model Versions**: `embedding-001` & `gemini-2.5-flash-preview-04-17` may change—update if deprecated.  
 - **URI vs File**: For reliability, using a pre‐downloaded transcript file can be smoother than live scraping.
 
