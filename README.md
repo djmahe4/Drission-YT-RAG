@@ -126,7 +126,7 @@ Hit **ENTER** on an empty line to quit.
    - **Embeddings**: `GoogleGenerativeAIEmbeddings` → vectors.  
    - **Vector Store**: In-memory FAISS for similarity search.  
    - **Compressor**: `ContextualCompressionRetriever` + `LLMChainExtractor` → slim context.  
-   - **LLM**: `ChatGoogleGenerativeAI` (gemini-2.5-flash) with a `PromptTemplate`.  
+   - **LLM**: `ChatGoogleGenerativeAI` ("gemini-2.5-flash-preview-04-17") with a `PromptTemplate`.  
    - **Chain**: A `RunnableParallel` orchestrates retrieval → extraction → chat.
 5. **Interactive Loop**  
    Each prompt invokes the RAG chain and returns a context-grounded answer.
