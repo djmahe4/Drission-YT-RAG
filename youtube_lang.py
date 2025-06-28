@@ -19,7 +19,7 @@ from googletrans import Translator
 import asyncio
 from tqdm import tqdm
 
-def main_chain(fpath):
+def create_main_chain(fpath):
     # 1. Load and Split Document
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 
@@ -241,13 +241,19 @@ if args.api_key:
             if json_name:
                 txt_name=postLoad(json_name)
                 if args.translate:
-                    trans=new_translate_text_file(txt_name)
-                    if trans:
-                        bot=main_chain(trans)
+                        translated_file = asyncio.run(new_translate_text_file(
+                            input_filepath=txt_name
+                        ))
+                        if translated_file:
+                            trans = translated_file # Use the translated file for RAG
+                            bot=create_main_chain(trans)
+                        else:
+                            print("Translation failed. Exiting.")
                 else:
-                    bot=main_chain(txt_name)
+                    bot=create_main_chain(txt_name)
             else:
-                print("Error in creating json file")
+                print("Error while creating json file")
+                exit()
         elif args.file:
             txt_name=args.file
             # --- AWAIT THE ASYNC TRANSLATION FUNCTION HERE ---
@@ -258,12 +264,13 @@ if args.api_key:
                 ))
                 if translated_file:
                     trans = translated_file # Use the translated file for RAG
-                    bot=main_chain(trans)
+                    bot=create_main_chain(trans)
                 else:
                     print("Translation failed. Exiting.")
+                    exit()
                     
             else:
-                bot=main_chain(txt_name)
+                bot=create_main_chain(txt_name)
         else:
             print("Invalid entry")
             print("Usage example: python youtube_lang.py -u uri -t -a GEMINI-API-KEY")
